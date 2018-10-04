@@ -20,5 +20,5 @@ Windows 10 LTSC 2019
 #### 以下是测试不通过的版本
 >Windows 10 Home/Profesionnal/Education/Enterprise 1511  
 Windows 10 Home/Profesionnal/Education/Enterprise 1607  
-Windows 10 LTSB 2015
+Windows 10 LTSB 2015  
 Windows 10 LTSB 2016

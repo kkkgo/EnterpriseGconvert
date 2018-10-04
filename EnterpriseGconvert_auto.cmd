@@ -28,6 +28,7 @@ cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver%
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms
 echo Windows 10 Enterprise G转换激活执行完成
 timeout 3
 exit

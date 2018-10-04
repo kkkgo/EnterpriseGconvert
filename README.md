@@ -9,3 +9,9 @@ Windows10自1803之后是无法通过dism Get-TargetEditions直接转换的，�
 
 ## 逆转换回去企业版示例：
 >slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43
+
+## 已测试过的系统版本  
+#### 以下是测试过的版本，未测试不代表不可用
+>Windows 10 Enterprise 1809
+Windows 10 Profesionnal 1809
+Windows 10 LTSC 2019

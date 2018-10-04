@@ -4,6 +4,18 @@ TITLE Windows 10 Enterprise G转换处理 by 03k.org
 ::仅作部署示例，请修改为你自己的KMS服务器
 set kmsserver=kms.03k.org
 ::仅作部署示例，请修改为你自己的KMS服务器
+:: Get Administrator Rights
+set _Args=%*
+if "%~1" NEQ "" (
+  set _Args=%_Args:"=%
+)
+fltmc 1>nul 2>nul || (
+  cd /d "%~dp0"
+  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~dp0"" && ""%~dpnx0"" ""%_Args%""", "", "runas", 1 > "%temp%\GetAdmin.vbs"
+  "%temp%\GetAdmin.vbs"
+  del /f /q "%temp%\GetAdmin.vbs" 1>nul 2>nul
+  exit
+)
 set skudir=%windir%\System32\spp\tokens\skus\
 certutil -decode -f %~f0 %skudir%\EnterpriseG.cer
 if not exist "%skudir%\EnterpriseG.cer" goto error

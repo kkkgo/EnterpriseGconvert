@@ -12,6 +12,8 @@ Windows10自1803之后是无法通过dism Get-TargetEditions直接转换的，�
 参考 https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys  
 ## 已测试过的系统版本  
 #### 以下是测试过的版本，未测试不代表不可用
->Windows 10 Enterprise 1809  
+>Windows 10 Enterprise 1803  
+Windows 10 Profesionnal 1803  
+Windows 10 Enterprise 1809  
 Windows 10 Profesionnal 1809  
 Windows 10 LTSC 2019  

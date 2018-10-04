@@ -30,6 +30,7 @@ cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms
 echo Windows 10 Enterprise G转换激活执行完成
+echo 阅读帮助信息：https://github.com/lixuy/EnterpriseGconvert
 timeout 3
 exit
 :error

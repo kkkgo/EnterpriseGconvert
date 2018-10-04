@@ -17,6 +17,7 @@ echo 正在安装证书，请稍候...
 cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
 echo Windows 10 Enterprise G转换执行完成，请自行处理系统激活
+echo 阅读帮助信息：https://github.com/lixuy/EnterpriseGconvert
 pause
 exit
 :error

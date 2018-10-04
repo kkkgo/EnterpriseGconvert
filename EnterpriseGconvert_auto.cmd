@@ -17,7 +17,7 @@ fltmc 1>nul 2>nul || (
   exit
 )
 set skudir=%windir%\System32\spp\tokens\skus\
-certutil -decode -f %~f0 %skudir%\EnterpriseG.cer
+certutil -decode -f "%~f0" %skudir%\EnterpriseG.cer
 if not exist "%skudir%\EnterpriseG.cer" goto error
 expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
 del /s /f /q %skudir%\EnterpriseG.cer

@@ -7,7 +7,7 @@ echo *本转换可逆，例如转换后重新导入企业版key可转换为企业版
 echo 要确定开始转换，请按任意键
 pause
 set skudir=%windir%\System32\spp\tokens\skus\
-certutil -decode -f %~f0 %skudir%\EnterpriseG.cer
+certutil -decode -f "%~f0" %skudir%\EnterpriseG.cer
 if not exist "%skudir%\EnterpriseG.cer" goto error
 expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
 del /s /f /q %skudir%\EnterpriseG.cer

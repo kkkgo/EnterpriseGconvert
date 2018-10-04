@@ -1,11 +1,9 @@
 @echo off
 color 1F
 TITLE Windows 10 Enterprise G转换处理 by 03k.org
-echo *本转换程序用于Windows 10 1803以上企业版转换为企业G版
-echo *如果你的系统低于1803，请使用dism /online进行转换，参考（https://03k.org/make10entg.html）
-echo *本转换可逆，转换后重新导入企业版key可转换为企业版
-echo 要确定开始转换，请按任意键
-pause
+::仅作部署示例，请修改为你自己的KMS服务器
+set kmsserver=kms.03k.org
+::仅作部署示例，请修改为你自己的KMS服务器
 set skudir=%windir%\System32\spp\tokens\skus\
 certutil -decode -f %~f0 %skudir%\EnterpriseG.cer
 if not exist "%skudir%\EnterpriseG.cer" goto error
@@ -16,13 +14,15 @@ echo 正在安装证书，请稍候...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc
 cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
-echo Windows 10 Enterprise G转换执行完成，请自行处理系统激活
-pause
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver%
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
+echo Windows 10 Enterprise G转换激活执行完成
+timeout 3
 exit
 :error
 cls
 echo 无法释放证书，请确认是否用右键管理员运行或者文件是否损坏
-pause
+timeout 3
 exit
 -----BEGIN CERTIFICATE-----
 TVNDRgAAAAD8fwAAAAAAACwAAAAAAAAAAwEBABUAAACojQAA1AUAAAoAAxUBoQAA

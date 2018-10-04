@@ -7,7 +7,7 @@ https://03k.org/1803entg.html
 
 ## [转换程序_一键自动激活版下载(右键另存为)](https://github.com/lixuy/EnterpriseGconvert/raw/master/EnterpriseGconvert_auto.cmd).
 #### 注：本程序仅供部署参考，请把kmsserver参数修改成自己的服务器地址。
-
+## 请务必在英文路径下运行以上程序
 ## 逆转换回去企业版示例：
 >slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43  
 其他版本参考 https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys  

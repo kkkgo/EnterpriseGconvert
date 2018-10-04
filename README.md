@@ -11,7 +11,7 @@
 >slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43  
 其他版本参考 https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys  
 ## 已测试过的系统版本  
-#### 以下是测试过的版本
+#### 以下是测试通过的版本
 >Windows 10 Home/Profesionnal/Education/Enterprise 1703  
 Windows 10 Home/Profesionnal/Education/Enterprise 1709  
 Windows 10 Home/Profesionnal/Education/Enterprise 1803  

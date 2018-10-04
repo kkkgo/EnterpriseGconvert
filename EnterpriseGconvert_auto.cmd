@@ -1,9 +1,9 @@
 @echo off
 color 1F
-TITLE Windows 10 Enterprise Gè½¬æ¢å¤„ç† by 03k.org
-::ä»…ä½œéƒ¨ç½²ç¤ºä¾‹ï¼Œè¯·ä¿®æ”¹ä¸ºä½ è‡ªå·±çš„KMSæœåŠ¡å™¨
+TITLE Windows 10 Enterprise G×ª»»´¦Àí by 03k.org
+::½ö×÷²¿ÊğÊ¾Àı£¬ÇëĞŞ¸ÄÎªÄã×Ô¼ºµÄKMS·şÎñÆ÷
 set kmsserver=kms.03k.org
-::ä»…ä½œéƒ¨ç½²ç¤ºä¾‹ï¼Œè¯·ä¿®æ”¹ä¸ºä½ è‡ªå·±çš„KMSæœåŠ¡å™¨
+::½ö×÷²¿ÊğÊ¾Àı£¬ÇëĞŞ¸ÄÎªÄã×Ô¼ºµÄKMS·şÎñÆ÷
 :: Get Administrator Rights
 set _Args=%*
 if "%~1" NEQ "" (
@@ -22,19 +22,19 @@ if not exist "%skudir%\EnterpriseG.cer" goto error
 expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
 del /s /f /q %skudir%\EnterpriseG.cer
 cls
-echo æ­£åœ¨å®‰è£…è¯ä¹¦ï¼Œè¯·ç¨å€™...
+echo ÕıÔÚ°²×°Ö¤Êé£¬ÇëÉÔºò...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc
 cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver%
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms
-echo Windows 10 Enterprise Gè½¬æ¢æ¿€æ´»æ‰§è¡Œå®Œæˆ
+echo Windows 10 Enterprise G×ª»»¼¤»îÖ´ĞĞÍê³É
 timeout 3
 exit
 :error
 cls
-echo æ— æ³•é‡Šæ”¾è¯ä¹¦ï¼Œè¯·ç¡®è®¤æ˜¯å¦ç”¨å³é”®ç®¡ç†å‘˜è¿è¡Œæˆ–è€…æ–‡ä»¶æ˜¯å¦æŸå
+echo ÎŞ·¨ÊÍ·ÅÖ¤Êé£¬ÇëÈ·ÈÏÊÇ·ñÓÃÓÒ¼ü¹ÜÀíÔ±ÔËĞĞ»òÕßÎÄ¼şÊÇ·ñËğ»µ
 timeout 3
 exit
 -----BEGIN CERTIFICATE-----

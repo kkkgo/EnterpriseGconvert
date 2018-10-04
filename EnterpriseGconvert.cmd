@@ -1,10 +1,10 @@
 @echo off
 color 1F
-TITLE Windows 10 Enterprise Gè½¬æ¢å¤„ç† by 03k.org
-echo *æœ¬è½¬æ¢ç¨‹åºç”¨äºWindows 10 1703+ç‰ˆè½¬æ¢ä¸ºä¼ä¸šGç‰ˆ
-echo *å¦‚æœä½ çš„ç³»ç»Ÿä½äº1703ï¼Œåˆ™æ— æ³•ä½¿ç”¨æœ¬ç¨‹åºè½¬æ¢ä¸ºä¼ä¸šGç‰ˆ
-echo *æœ¬è½¬æ¢å¯é€†ï¼Œä¾‹å¦‚è½¬æ¢åé‡æ–°å¯¼å…¥ä¼ä¸šç‰ˆkeyå¯è½¬æ¢ä¸ºä¼ä¸šç‰ˆ
-echo è¦ç¡®å®šå¼€å§‹è½¬æ¢ï¼Œè¯·æŒ‰ä»»æ„é”®
+TITLE Windows 10 Enterprise G×ª»»´¦Àí by 03k.org
+echo *±¾×ª»»³ÌĞòÓÃÓÚWindows 10 1703+°æ×ª»»ÎªÆóÒµG°æ
+echo *Èç¹ûÄãµÄÏµÍ³µÍÓÚ1703£¬ÔòÎŞ·¨Ê¹ÓÃ±¾³ÌĞò×ª»»ÎªÆóÒµG°æ
+echo *±¾×ª»»¿ÉÄæ£¬ÀıÈç×ª»»ºóÖØĞÂµ¼ÈëÆóÒµ°ækey¿É×ª»»ÎªÆóÒµ°æ
+echo ÒªÈ·¶¨¿ªÊ¼×ª»»£¬Çë°´ÈÎÒâ¼ü
 pause
 set skudir=%windir%\System32\spp\tokens\skus\
 certutil -decode -f %~f0 %skudir%\EnterpriseG.cer
@@ -12,16 +12,16 @@ if not exist "%skudir%\EnterpriseG.cer" goto error
 expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
 del /s /f /q %skudir%\EnterpriseG.cer
 cls
-echo æ­£åœ¨å®‰è£…è¯ä¹¦ï¼Œè¯·ç¨å€™...
+echo ÕıÔÚ°²×°Ö¤Êé£¬ÇëÉÔºò...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc
 cls
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
-echo Windows 10 Enterprise Gè½¬æ¢æ‰§è¡Œå®Œæˆï¼Œè¯·è‡ªè¡Œå¤„ç†ç³»ç»Ÿæ¿€æ´»
+echo Windows 10 Enterprise G×ª»»Ö´ĞĞÍê³É£¬Çë×ÔĞĞ´¦ÀíÏµÍ³¼¤»î
 pause
 exit
 :error
 cls
-echo æ— æ³•é‡Šæ”¾è¯ä¹¦ï¼Œè¯·ç¡®è®¤æ˜¯å¦ç”¨å³é”®ç®¡ç†å‘˜è¿è¡Œæˆ–è€…æ–‡ä»¶æ˜¯å¦æŸå
+echo ÎŞ·¨ÊÍ·ÅÖ¤Êé£¬ÇëÈ·ÈÏÊÇ·ñÓÃÓÒ¼ü¹ÜÀíÔ±ÔËĞĞ»òÕßÎÄ¼şÊÇ·ñËğ»µ
 pause
 exit
 -----BEGIN CERTIFICATE-----

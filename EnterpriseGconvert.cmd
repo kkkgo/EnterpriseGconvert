@@ -7,15 +7,18 @@ echo *本转换可逆，例如转换后重新导入企业版key可转换为企业版
 echo 要确定开始转换，请按任意键
 pause
 set skudir=%windir%\System32\spp\tokens\skus\
-certutil -decode -f "%~f0" %skudir%\EnterpriseG.cer
+certutil -decode -f "%~f0" %skudir%\EnterpriseG.cer 1>nul 2>nul
 if not exist "%skudir%\EnterpriseG.cer" goto error
-expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
+expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\ 1>nul 2>nul
 del /s /f /q %skudir%\EnterpriseG.cer
 cls
 echo 正在安装证书，请稍候...
-%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc
-cls
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc 1>nul 2>nul
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" /v NoGenTicket /t REG_DWORD /d 1 /f 1>nul 2>nul
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /act-type 0 1>nul 2>nul
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckhc 1>nul 2>nul
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /xpr
 echo Windows 10 Enterprise G转换执行完成，请自行处理系统激活
 echo 阅读帮助信息：https://github.com/lixuy/EnterpriseGconvert
 pause

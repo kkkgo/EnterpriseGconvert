@@ -17,21 +17,29 @@ fltmc 1>nul 2>nul || (
   exit
 )
 set skudir=%windir%\System32\spp\tokens\skus\
-certutil -decode -f "%~f0" %skudir%\EnterpriseG.cer
+certutil -decode -f %~f0 %skudir%\EnterpriseG.cer 1>nul 2>nul
 if not exist "%skudir%\EnterpriseG.cer" goto error
-expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\
+expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\ 1>nul 2>nul
 del /s /f /q %skudir%\EnterpriseG.cer
 cls
 echo 正在安装证书，请稍候...
-%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc
-cls
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc 1>nul 2>nul
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" /v NoGenTicket /t REG_DWORD /d 1 /f 1>nul 2>nul
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /act-type 0 1>nul 2>nul
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckhc 1>nul 2>nul
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
-%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver%
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver% 1>nul 2>nul
+echo 正在连接指定服务器激活，请稍候...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
-%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms 1>nul 2>nul
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f" /f 1>nul 2>nul
+(for /f "delims=" %%d in ('reg query hku') do (
+    reg delete "%%d\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f" /f 1>nul 2>nul
+))
+%windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /xpr
 echo Windows 10 Enterprise G转换激活执行完成
 echo 阅读帮助信息：https://github.com/lixuy/EnterpriseGconvert
-timeout 3
+timeout 8
 exit
 :error
 cls

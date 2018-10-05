@@ -2,7 +2,7 @@
 https://03k.org/1803entg.html  
 本程序通过导入证书来转换1703+的Windows 10系统为Enterprise G，并且转换也是可逆的，例如原来是企业版，想要用回去企业版可以直接导入企业版的key即可，企业G有两个好处，一个是就是400年的kms宽限期，还有就是无法升级版本，对于不想让Windows更新升级的同学来说也方便，并且也能随时转换回去。  
 
-## [转换程序下载](https://raw.githubusercontent.com/lixuy/EnterpriseGconvert/master/EnterpriseGconvert.cmd).
+## [转换程序下载](https://github.com/lixuy/EnterpriseGconvert/releases/download/1/EnterpriseGconvert.cmd).
 #### 注：本程序仅执行转换操作，请自行处理系统激活。
 下载后右键管理员运行即可。
 

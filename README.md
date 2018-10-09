@@ -15,13 +15,13 @@ https://03k.org/1803entg.html
 
 ## 已测试过的系统版本  
 #### 以下是测试通过的版本
->Windows 10 Home/Profesionnal/Education/Enterprise 1703  
-Windows 10 Home/Profesionnal/Education/Enterprise 1709  
-Windows 10 Home/Profesionnal/Education/Enterprise 1803  
-Windows 10 Home/Profesionnal/Education/Enterprise 1809  
+>Windows 10 Home/Professional/Education/Enterprise 1703  
+Windows 10 Home/Professional/Education/Enterprise 1709  
+Windows 10 Home/Professional/Education/Enterprise 1803  
+Windows 10 Home/Professional/Education/Enterprise 1809  
 Windows 10 LTSC 2019  
 #### 以下是测试不通过的版本
->Windows 10 Home/Profesionnal/Education/Enterprise 1511  
-Windows 10 Home/Profesionnal/Education/Enterprise 1607  
+>Windows 10 Home/Professional/Education/Enterprise 1511  
+Windows 10 Home/Professional/Education/Enterprise 1607  
 Windows 10 LTSB 2015  
 Windows 10 LTSB 2016
